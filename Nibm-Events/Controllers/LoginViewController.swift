@@ -30,6 +30,11 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        ProfilePhoto.layer.cornerRadius = 30
+        ProfilePhoto.layer.cornerRadius = 5
+        ProfilePhoto.layer.cornerRadius = ProfilePhoto.frame.size.width/2
+        
+        
         setUpElements()
         // Do any additional setup after loading the view.
     }

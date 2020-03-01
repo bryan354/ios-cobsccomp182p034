@@ -43,7 +43,6 @@
                                     </textField>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Zo0-8g-YFj">
                                         <rect key="frame" x="0.0" y="210" width="350" height="150"/>
-                                        <color key="backgroundColor" red="0.72816934266172151" green="1" blue="0.97733405085771852" alpha="0.84705882352941175" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="350" id="kbl-Z6-jjJ"/>
                                             <constraint firstAttribute="height" constant="150" id="nd9-85-09J"/>

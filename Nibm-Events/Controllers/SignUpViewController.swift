@@ -127,6 +127,12 @@ class SignUpViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        ProfilPhoto.layer.cornerRadius = 30
+        ProfilPhoto.layer.cornerRadius = 5
+        ProfilPhoto.layer.cornerRadius = ProfilPhoto.frame.size.width/2
+        
+        
+        
         
         setUpElements()
         // Do any additional setup after loading the view.
