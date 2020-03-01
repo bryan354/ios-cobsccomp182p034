@@ -620,7 +620,7 @@
         <scene sceneID="zgY-AO-muw">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="oWB-av-UOL" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Home" id="si4-KN-7YZ"/>
+                    <tabBarItem key="tabBarItem" title="Home" image="home (1)" id="si4-KN-7YZ"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Xz6-WF-ufT">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -713,7 +713,7 @@
         <scene sceneID="B0D-fq-Dkm">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="9si-XK-B7N" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Create Event" id="pT6-ck-c69"/>
+                    <tabBarItem key="tabBarItem" title="Create Event" image="add (1)" id="pT6-ck-c69"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="c5r-ww-Bez">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -764,11 +764,11 @@
             </objects>
             <point key="canvasLocation" x="192.75362318840581" y="1932.5892857142856"/>
         </scene>
-        <!--Item-->
+        <!--Profile-->
         <scene sceneID="ev1-r2-x9V">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Lxu-W8-zqU" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="15v-w7-6YY"/>
+                    <tabBarItem key="tabBarItem" title="Profile" image="user" id="15v-w7-6YY"/>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="eXs-46-Xyv"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="SV1-JM-9lz">
@@ -786,6 +786,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="add (1)" width="32" height="32"/>
+        <image name="home (1)" width="32" height="32"/>
         <image name="user" width="32" height="32"/>
     </resources>
     <inferredMetricsTieBreakers>
