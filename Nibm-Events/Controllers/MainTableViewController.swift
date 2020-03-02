@@ -1,75 +1,99 @@
 //
-//  MainTableViewController.swift
+//  HomeTableViewController.swift
 //  Nibm-Events
 //
-//  Created by Bryan Charles on 3/1/20.
+//  Created by Bryan Charles on 3/2/20.
 //  Copyright © 2020 Bryan Charles. All rights reserved.
 //
 
 import UIKit
-import FirebaseStorage
 import Firebase
+import FirebaseStorage
 
-struct cell{
+
+struct homecell {
     
-    var eventtitle : String
-    var description : String
-//    var eventimgurl : String
-    
+    var Ename: String
+    var Edes : String
 }
 
-class TableViewController: UITableViewController {
+class MainTableViewController: UITableViewController {
     
-    var cellArr = [cell](){
+    var array = [homecell](){
         
         didSet{
+            
             tableView.reloadData()
         }
         
     }
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         
-        cellData()
+       data()
+        
+        // Uncomment the following line to preserve selection between presentations
+        // self.clearsSelectionOnViewWillAppear = false
+        
+        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
+        // self.navigationItem.rightBarButtonItem = self.editButtonItem
         
         
-    }
+        
+        
+        
+            }
     
-    
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        let cells = tableView.dequeueReusableCell(withIdentifier: "Maincell") as! MainTableViewCell
-
-        cells.EventName.text = cellArr[indexPath.row].eventtitle
-        cells.DescriptionLable.text = cellArr[indexPath.row].description
-        
-//        let img = URL(string: cellArr[indexPath.row].eventimgurl)
-//        cells.EventImg.kf.setImage(with: img)
-        
-        
-        
-        return cells
-    }
+    // MARK: - Table view data source
     
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return 1
     }
     
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        // #warning Incomplete implementation, return the number of rows
+        return array.count
+    }
+    
+    
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        
         return 400
     }
     
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-      
-        return cellArr.count
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let celles = tableView.dequeueReusableCell(withIdentifier: "Maincell") as! MainTableViewCell
+        
+        celles.EventName.text = array[indexPath.row].Ename
+        celles.DescriptionLable.text = array[indexPath.row].Edes
+        
+        
+        return celles
     }
     
-    func cellData(){
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+ 
+        
+        let vc = storyboard?.instantiateViewController(withIdentifier: "detailvc") as? DetailViewController
+        
+        vc?.ename = array[indexPath.row].Ename
+        vc?.desc = array[indexPath.row].Edes
+        
+        
+    
+        
+        
+        self.navigationController?.pushViewController(vc!, animated: true)
+        
+    }
+    
+    
+    
+    
+    func data(){
         
         let db = Firestore.firestore()
         db.collection("NewEvents").getDocuments() { (querySnapshot, err) in
@@ -78,39 +102,80 @@ class TableViewController: UITableViewController {
             } else {
                 for document in querySnapshot!.documents {
                     
-                    let EventTitle = document.data()["Eventname"] as? String
-                    let EventDesc = document.data()["description"] as? String
-//                    let imgurl =  document.data()["eventimgurl"] as? String
-                    let events = cell(eventtitle: EventTitle!, description: EventDesc!)
                     
-                    self.cellArr.append(events)
+                    let Ename = document.data()["Eventname"] as? String
+                    
+
+                    
+                    let EDescription = document.data()["description"] as? String
+                    
+                    
+                    let homeevents = homecell(Ename: Ename!, Edes: EDescription! )
+                    
+                    self.array.append(homeevents)
+                    
                     self.tableView.reloadData()
                     
-                    print(events)
+                    
                 }
             }
-            
-            print(self.cellArr)
-            
-            
         }
-        
         
     }
     
-//    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        
-//        let Home = storyboard?.instantiateViewController(withIdentifier: "DetailViewController") as? DetailViewController
-//        
-//        Home?.Ename = cellArr[indexPath.row].eventtitle
-//        Home?.Edescription = cellArr[indexPath.row].eventdes
-//        Home?.Eimgurl = cellArr[indexPath.row].eventimgurl
-//        
-//        self.navigationController?.pushViewController(Home!, animated:true)
-//        
-//    }
+    /*
+     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+     let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+     
+     // Configure the cell...
+     
+     return cell
+     }
+     */
     
+    /*
+     // Override to support conditional editing of the table view.
+     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+     // Return false if you do not want the specified item to be editable.
+     return true
+     }
+     */
+    
+    /*
+     // Override to support editing the table view.
+     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+     if editingStyle == .delete {
+     // Delete the row from the data source
+     tableView.deleteRows(at: [indexPath], with: .fade)
+     } else if editingStyle == .insert {
+     // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
+     }
+     }
+     */
+    
+    /*
+     // Override to support rearranging the table view.
+     override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
+     
+     }
+     */
+    
+    /*
+     // Override to support conditional rearranging of the table view.
+     override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
+     // Return false if you do not want the item to be re-orderable.
+     return true
+     }
+     */
+    
+    /*
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destination.
+     // Pass the selected object to the new view controller.
+     }
+     */
     
 }
-
-

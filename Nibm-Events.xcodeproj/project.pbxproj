@@ -28,6 +28,8 @@
 		93AF2879240BFC3500CAD3A5 /* MainTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93AF2878240BFC3500CAD3A5 /* MainTableViewController.swift */; };
 		93AF287B240C082200CAD3A5 /* Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93AF287A240C082200CAD3A5 /* Cell.swift */; };
 		93AF287F240C109000CAD3A5 /* MainTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93AF287E240C109000CAD3A5 /* MainTableViewCell.swift */; };
+		93DEE3A9240D2E510017227F /* HomeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93DEE3A8240D2E510017227F /* HomeTableViewController.swift */; };
+		93DEE3AD240D38AB0017227F /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93DEE3AC240D38AB0017227F /* DetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +77,8 @@
 		93AF2878240BFC3500CAD3A5 /* MainTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableViewController.swift; sourceTree = "<group>"; };
 		93AF287A240C082200CAD3A5 /* Cell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cell.swift; sourceTree = "<group>"; };
 		93AF287E240C109000CAD3A5 /* MainTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableViewCell.swift; sourceTree = "<group>"; };
+		93DEE3A8240D2E510017227F /* HomeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewController.swift; sourceTree = "<group>"; };
+		93DEE3AC240D38AB0017227F /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		AF6217DF19D5DA523EEC1A1C /* Pods-Nibm-Events.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Nibm-Events.debug.xcconfig"; path = "Target Support Files/Pods-Nibm-Events/Pods-Nibm-Events.debug.xcconfig"; sourceTree = "<group>"; };
 		C5DE2BB9CE3FE70D1C6074B2 /* Pods_Nibm_Events.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Nibm_Events.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -184,6 +188,8 @@
 				93AF287A240C082200CAD3A5 /* Cell.swift */,
 				93AF287E240C109000CAD3A5 /* MainTableViewCell.swift */,
 				9383C65A240C281000064D07 /* Alert.swift */,
+				93DEE3A8240D2E510017227F /* HomeTableViewController.swift */,
+				93DEE3AC240D38AB0017227F /* DetailViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -379,8 +385,10 @@
 				93AF286B240A781F00CAD3A5 /* CreatEventViewController.swift in Sources */,
 				93694269240956CD00343419 /* AppDelegate.swift in Sources */,
 				9383C65B240C281000064D07 /* Alert.swift in Sources */,
+				93DEE3AD240D38AB0017227F /* DetailViewController.swift in Sources */,
 				93AF287B240C082200CAD3A5 /* Cell.swift in Sources */,
 				9369429B240961C000343419 /* SignUpViewController.swift in Sources */,
+				93DEE3A9240D2E510017227F /* HomeTableViewController.swift in Sources */,
 				93AF286724096D7700CAD3A5 /* Validation.swift in Sources */,
 				93AF2877240BE57500CAD3A5 /* ForgotPasswordViewController.swift in Sources */,
 				93694271240956CD00343419 /* Nibm_Events.xcdatamodeld in Sources */,
